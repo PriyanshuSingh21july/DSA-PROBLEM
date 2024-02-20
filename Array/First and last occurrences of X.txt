@@ -1,0 +1,13 @@
+First and last occurrences of X
+
+Input:
+N = 4 , X = 3
+arr[] = { 1, 3, 3, 4 }
+Output:
+1 2
+Explanation:
+For the above array, first occurence
+of X = 3 is at index = 1 and last
+occurence is at index = 2.
+
+

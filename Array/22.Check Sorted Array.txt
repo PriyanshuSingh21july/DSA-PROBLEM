@@ -1,0 +1,22 @@
+Check Sorted Array
+
+public class Solution {
+    public static int isSorted(int n, int []arr) {
+       
+
+       for(int i=1;i<n; i++)
+       {
+           if(arr[i]>=arr[i-1])
+           {
+
+           }
+           else
+           {
+               return 0;
+           }
+       }
+        
+    
+  return 1;
+    }
+}

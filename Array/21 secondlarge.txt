@@ -1,0 +1,33 @@
+public class Solution {
+    int largest=arr[i];
+    int  secondLatgest=-1;
+    public static int  secondlarge(ArrayList<Integer>arr = new ArrayList<>())  
+    {
+         for(int i=0; i<n; i++)
+         {
+             if(arr[i]>largest)
+             {
+                 secondLatgest=largest;
+                 largest=arr[i];
+             }
+             else if(arr[i]>largest  && arr[i]<secondLatgest)
+             {
+                 secondLatgest=arr[i];
+             }
+         }
+    }
+
+
+
+    public static int[] getSecondOrderElements(int n, int []arr) {
+      
+      int secondLatgest=secondlarge(arr,n);
+    return secondLatgest;
+ 
+
+
+
+
+
+    }
+}

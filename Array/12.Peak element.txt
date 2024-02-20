@@ -1,0 +1,50 @@
+Peak element
+
+Input: 
+N = 3
+arr[] = {1,2,3}
+Possible Answer: 2
+Generated Output: 1
+Explanation: index 2 is 3.
+It is the peak element as it is 
+greater than its neighbour 2.
+If 2 is returned then the generated output will be 1 else 0.
+
+
+
+class Solution
+{
+	// Function to find the peak element
+	// arr[]: input array
+	// n: size of array a[]
+	public int peakElement(int[] arr,int n)
+    {
+      int low=0; int high=n-1;
+        int l = 0;
+        int r = n-1;
+        int mid = 0;
+       
+        while (l <= r) {
+ 
+            // finding mid by binary right shifting.
+            mid = (l + r) >> 1;
+ 
+            // first case if mid is the answer
+            if ((mid == 0
+                 || arr[mid - 1] <= arr[mid])
+                        && (mid == n - 1
+                            || arr[mid + 1] <= arr[mid]))
+                break;
+ 
+            // move the right pointer
+            if (mid > 0 && arr[mid - 1] > arr[mid])
+                r = mid - 1;
+ 
+            // move the left pointer
+            else
+                l = mid + 1;
+        }
+       
+        return mid;
+    }
+    }

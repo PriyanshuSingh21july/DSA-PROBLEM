@@ -1,0 +1,41 @@
+Row with max 1s
+
+
+Input: 
+N = 4 , M = 4
+Arr[][] = {{0, 1, 1, 1},
+           {0, 0, 1, 1},
+           {1, 1, 1, 1},
+           {0, 0, 0, 0}}
+Output: 2
+Explanation: Row 2 contains 4 1's (0-based
+indexing).
+
+
+class Solution {
+    int rowWithMax1s(int arr[][], int n, int m) {
+        
+        
+        
+        
+        int r=0;
+        int c=m-1;
+        int maxIndex=-1;
+        while(r<n && c>=0)
+        {
+            if(arr[r][c]==1)
+            {
+                maxIndex=r;
+                c--;
+            }
+            else
+            {
+                r++;
+            }
+          
+        }
+          return  maxIndex;
+        
+        
+    }
+}

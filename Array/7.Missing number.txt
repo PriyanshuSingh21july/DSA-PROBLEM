@@ -1,0 +1,31 @@
+Missing number
+
+Input:                                                       
+N = 4                                        
+A[] = {1, 4, 3}
+Output:
+2     
+Explanation:
+Vaibhav placed 4 integers but he picked
+up only 3 numbers. So missing number
+will be 2 as it will become 1,2,3,4.
+
+
+class Compute {
+    
+    public static int missingNumber(int A[], int N)
+    {
+
+  int sumarr=0;
+   for(int i=0;i<N-1;i++)
+   {
+       sumarr+=A[i];
+   }
+   
+   int nsum=(N*(N+1))/2;
+   return nsum-sumarr;
+
+ 
+    }
+}
+

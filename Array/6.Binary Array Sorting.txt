@@ -1,0 +1,32 @@
+Binary Array Sorting
+
+Input: 
+5
+1 0 1 1 0
+
+Output: 
+0 0 1 1 1
+
+
+
+class Solution
+{
+    //Function to sort the binary array.
+    static void binSort(int A[], int N)
+    {
+        int count=0;
+        for(int i=0; i<N; i++)
+        {
+            if(A[i]==0)
+            {
+                int temp=A[i];
+                A[i]=A[count];
+                A[count]=temp;
+                count++;
+            }
+        }
+        
+        
+        
+    }
+}

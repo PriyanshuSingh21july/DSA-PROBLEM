@@ -1,0 +1,39 @@
+Equilibrium Point
+
+Input: 
+n = 5 
+A[] = {1,3,5,2,2} 
+Output: 
+3 
+Explanation:  
+equilibrium point is at position 3 as sum of elements before it (1+3) = sum of elements after it (2+2). 
+
+
+class Solution {
+
+    
+    public static int equilibriumPoint(long arr[], int n) {
+        int sum=0;
+        int rsum=0;
+
+         for(int i=0; i<n; i++)
+        {
+            sum+=arr[i];
+        }
+        
+          for(int i=0; i<n; i++)
+        {
+            sum-=arr[i];
+            
+            if(sum==rsum)
+            {
+                return i+1;
+            }
+            rsum+=arr[i];
+        }
+        
+        return -1;
+        
+        
+    }
+}

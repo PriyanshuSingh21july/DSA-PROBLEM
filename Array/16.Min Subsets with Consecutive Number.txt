@@ -1,0 +1,42 @@
+Min Subsets with Consecutive Numbers
+input:
+N = 10
+Arr[] = {100, 56, 5, 6, 102, 58, 101, 57, 7, 103} 
+Output:
+3
+Explanation:
+{5, 6, 7}, { 56, 57, 58}, {100, 101, 102, 103} are
+3 subset in which numbers are consecutive.
+
+
+
+
+
+
+
+class Solution {
+    
+    public static int numofsubset(int arr[], int n)
+    {
+     
+     
+     
+      Arrays.sort(arr);
+         int subcount=1;
+         for(int i=1; i<n; i++)
+         {
+             if(arr[i]-arr[i-1]!=1)
+    subcount++;
+        
+         
+    }
+        return subcount;
+     
+     
+     
+     
+     
+     
+      
+    }  
+}
