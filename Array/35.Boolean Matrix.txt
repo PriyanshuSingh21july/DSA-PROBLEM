@@ -1,0 +1,47 @@
+Boolean Matrix
+Input:
+matrix[][] = {{1, 0},
+              {0, 0}}
+Output: 
+1 1
+1 0 
+
+class Solution {
+   
+    void booleanMatrix(int matrix[][]) {
+       
+       int row = matrix.length;
+       int col = matrix[0].length;
+       
+       boolean mat_row[] = new boolean[row];
+       boolean mat_col[] = new boolean[col];
+       
+       // Traverse the matrix to mark rows and columns containing 1
+       for(int i = 0; i < row; i++) {
+           for(int j = 0; j < col; j++) {
+               if(matrix[i][j] == 1) {
+                   mat_row[i] = true;
+                   mat_col[j] = true;
+               }
+           }
+       }
+       
+       // Modify the matrix based on marked rows
+       for(int i = 0; i < row; i++) {
+           if(mat_row[i]) {
+               for(int j = 0; j < col; j++) {
+                   matrix[i][j] = 1;
+               }
+           }
+       }
+       
+       // Modify the matrix based on marked columns
+       for(int i = 0; i < col; i++) {
+           if(mat_col[i]) {
+               for(int j = 0; j < row; j++) {
+                   matrix[j][i] = 1;
+               }
+           }
+       }
+    }
+}
